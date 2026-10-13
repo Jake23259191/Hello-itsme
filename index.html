@@ -43,6 +43,12 @@
               Gophish helps security teams plan, execute, and measure awareness training
               campaigns with a clean interface and flexible campaign controls.
             </p>
+
+            <div class="target-box">
+              <span class="target-label">Target</span>
+              <strong id="targetDisplay">No target provided</strong>
+            </div>
+
             <div class="cta-row">
               <a class="button button-primary" href="#get-started">Explore Campaigns</a>
               <a class="button button-secondary" href="#features">View Features</a>
@@ -198,5 +204,15 @@
         <p>Security testing for informed teams.</p>
       </div>
     </footer>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const target = params.get('target');
+      const targetDisplay = document.getElementById('targetDisplay');
+
+      if (targetDisplay) {
+        targetDisplay.textContent = target || 'No target provided';
+      }
+    </script>
   </body>
 </html>
